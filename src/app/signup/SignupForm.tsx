@@ -1,5 +1,6 @@
 "use client"
 
+import { useAuth } from "@/lib/contexts/AuthProvider"
 import { signOut, signupWithEmailPassword } from "@/lib/firebase/auth"
 import { useRouter } from "next/navigation"
 import { Controller, useForm } from "react-hook-form"
@@ -16,9 +17,11 @@ function SignupForm() {
 
 	const router = useRouter()
 
+	const { signOut } = useAuth()
+
 	async function submitUser(data) {
 		// signupWithEmailPassword(data.name, data.admin, data.email, data.password)
-		const userCred = await signupWithEmailPassword(data.email, data.password)
+		await signupWithEmailPassword(data.email, data.password)
 
 		await signOut()
 
