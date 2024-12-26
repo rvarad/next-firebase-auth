@@ -1,27 +1,32 @@
 {
-  "name": "next-firebase-auth",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.2"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.2",
-    "@eslint/eslintrc": "^3"
-  }
+	"name": "next-firebase-auth",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack",
+		"build": "next build",
+		"build-service-worker": "npx esbuild auth-service-worker.js --bundle --outfile=public/auth-service-worker.js",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"firebase": "^11.1.0",
+		"firebase-admin": "^13.0.2",
+		"firebase-tools": "^13.29.1",
+		"next": "15.1.2",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-hook-form": "^7.54.2"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"eslint": "^9",
+		"eslint-config-next": "15.1.2",
+		"postcss": "^8",
+		"tailwindcss": "^3.4.1",
+		"typescript": "^5"
+	}
 }
